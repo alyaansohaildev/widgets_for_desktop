@@ -1,0 +1,176 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <title>Hello World!</title>
+    <script src="./wave.js"></script>
+    <script src="./jquery.min.js"></script>  
+  
+    <script src="./main_screen_back.js"></script>
+    <style>
+        *{
+          margin: 0;
+          padding:0 ;
+        }
+        body,html{
+        
+        }
+        #main-div{
+
+            
+
+          box-shadow: 2px 2px 4px 1px rgba(0,0,0,0.7);
+          margin: 0;
+          background-color: rgba(10,10,10, 0.9);
+          /* padding: 1%; */
+          height: 98%;
+          /* width: 98%; */ 
+        }
+        #audioElmId{
+          display: none;
+          visibility: hidden;
+          width:100px;
+          bottom: 1;
+         
+        }
+        #canvasElmId{
+          padding: 0;
+          max-width: 97%;
+          
+        }
+
+        #below_div{
+          
+          position: absolute;
+          z-index: 1;
+          bottom: 10px;
+          opacity: 0.7;
+        }
+        #upper_div{
+          background-color: rgba(0,0,0,0.3);
+          position: absolute;
+          z-index: 2;
+          top:10;
+
+          
+        }
+
+        /* #weekday{
+          color:rgb(235,235,235,1);
+          font-family: 'Roboto', Courier, monospace;
+          font-size: 15px;
+          margin-top: 20px;
+          margin-left: 20px;
+          letter-spacing: 2px;
+        }
+        #time{
+          color:rgb(255,255,255,1);
+          font-family: 'Roboto', Courier, monospace;
+          font-size: 40px;
+          letter-spacing: 2px;
+          margin-top: 10px;
+          margin-left: 20px;
+          font-weight: bold;
+        }
+        #date{
+          color:rgb(255,255,255,0.9);
+          font-family: 'Roboto', Courier, monospace;
+          font-size: 15px;
+          letter-spacing: 2px;
+          margin-top: 5px;
+          margin-left: 25px;
+
+        } */
+
+        
+        #playingNow{
+          color: rgb(235,235,235);
+          letter-spacing: 2px;
+          font-size: 12px;
+          font-family: "Roboto";
+          margin-top: 25px;
+          margin-left: 25px;
+
+        }
+        #songName{
+          color:rgb(255,255,255);
+          font-size: 20px;
+          font-family: "Roboto";
+          margin-top: 10px;
+          margin-left: 25px;
+          letter-spacing: 2px;
+        }
+
+        #controls{
+        
+          margin:30px 20px;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-around;
+        }
+        .icon_properties{
+          width: 40px;
+          height: 40px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+        }
+        #play_icon{
+          background-image: url("./image/play_icon.png");
+          
+        }
+        #prev_icon{
+          background-image: url("./image/prev_icon.png");
+          
+        }
+        #next_icon{
+          background-image: url("./image/next_icon.png");
+          
+        }
+
+        #select_folder{
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          background-image: url("./image/prev_icon.png");
+          background-size: cover;
+          transform: rotate(-90deg);
+          top:20px;
+          right:20px;
+          z-index: 22;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="main-div">
+
+        <div id="below_div">
+          <canvas id="canvasElmId"></canvas>
+        </div>
+
+        <div id="upper_div">
+          <!-- <p id="weekday">Tuesday</p>
+          <p id="time">10:55am</p>
+          <p id="date">17 - Oct -2022</p> -->
+          <div id="select_folder"></div>
+          <p id="playingNow">Playing Now</p>
+          <p id="songName">To The Hell</p>
+          <audio id="audioElmId" src="./aw.mp3" controls></audio>
+          <div id="controls">
+            <div id="prev_icon" class="icon_properties"></div>
+            <div id="play_icon" class="icon_properties"></div>
+            <div id="next_icon" class="icon_properties"></div>
+            
+          </div>
+        </div>
+        
+        
+    </div>
+    
+    
+  </body>
+</html>
